@@ -1,54 +1,38 @@
 # Altium Library
 
-This library is a copy of excellent [Celestial Altium Library](https://github.com/issus/altium-library).
-The primary objective in undertaking this project is independent development.
+### Thuận lợi
 
-### Advantages
-- One full library with standardized components
-- No need for different Altium plugins for development
-- Every day synchronization
-- Automated updates from different sources
-- Offline development support
-- Single `git pull` and library is up to date
-
-### How it works
+### Cách thức hoạt động
 
 ![<img width="200" height="200"/>](assets/library_diagram.png)
 
-1. Library has been updated in two ways:
-    - ***Manually:*** by admin and developers.
-    - ***Automatically:*** by `ghost-crawler`, which integrates with different platforms, compares actual database 
-      and creates pull requests when new data has been arrived.
-2. All database changes are stored in `migration` folder as `SQL` scripts. This serves as historical data for DB version control
-3. After all pushes to the `main` branch, the CI/CD pipeline runs the [altium-migrator](https://github.com/ximtech/altium-migrator) updating the database
-
-### How to use it
+### Cách sử dụng
 
 #### Clone repository
-1. `git clone https://github.com/ximtech/altium-library.git`
+1. `https://github.com/NguyenHien-8/Altium_Library.git`
 
-### Configure ODBC drivers for PostgreSQL
+### Cấu hình trình điều khiển ODBC cho PostgreSQL
 
 #### Offline development configuration
-1. Download and install Postgres for local development [here](https://www.postgresql.org/download/windows/) -> `Download the installer`.
-  - Download and install PgAdmin tool from [here](https://www.pgadmin.org/).
-  - Create empty Database:
+1. Tải xuống và cài đặt Postgres để phát triển cục bộ [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) -> `Download the installer`.
+  - Tải xuống và cài đặt công cụ PgAdmin từ [here](https://www.pgadmin.org/).
+  - Tạo cơ sở dữ liệu trống:
   - ![<img width="20" height="20"/>](assets/database.png)
-  - In `Database` field write: `altium-components` -> `Save`
+  - Trong `Database` ô này, hãy viết: `altium-components` -> `Save`
    
-2. Download pSQLODBC_x64 Driver from [this](https://www.postgresql.org/ftp/odbc/versions/) location.
-  We are configuring the ODBC driver for Windows 10 or later, so we are going to download the MSI file of the Driver. Click on the MSI folder.
+2. Tải xuống trình điều khiển pSQLODBC_x64 từ [this](https://www.postgresql.org/ftp/odbc/versions.old/) vị trí.
+  Chúng ta đang cấu hình trình điều khiển ODBC cho Windows 11 trở lên, vì vậy chúng ta sẽ tải xuống tệp MSI của trình điều khiển. Nhấp vào thư mục MSI.
     - ![<img width="20" height="20"/>](assets/link_1.png)
-3. Under the MSI directory, you can view the various versions of Driver. The files are compressed in zip format. 
-      We want to download the latest version, so scroll down to the bottom of the page and click on the `psqlodbc_13_01_0000-x64.zip` file.
+3. Trong thư mục MSI, bạn có thể xem các phiên bản trình điều khiển khác nhau. Các tệp được nén ở định dạng zip.
+      Chúng ta muốn tải xuống phiên bản mới nhất, vì vậy hãy cuộn xuống cuối trang và nhấp vào tệp `psqlodbc_13_02_0000-x86-1.zip`.
    - ![<img width="20" height="20"/>](assets/link_2.png)
-4. Once download completes, right-click on `psqlodbc_13_01_0000-x64.zip` file and select Extract to `psqlodbc_13_01_0000-x64` option.
+4. Sau khi quá trình tải xuống hoàn tất, nhấp chuột phải vào tệp `psqlodbc_13_02_0000-x86-1.zip` và chọn Extract to `psqlodbc_13_02_0000-x86-1.zip`.
     - ![<img width="20" height="20"/>](assets/link_3.png)
-5. Install the psqlODBC_x64 driver. When we run the MSI file, the pSQLODBC_x64 diver setup wizard begins. On the first screen, you can see the details of the wizard. Click `Next`.
+5. Cài đặt trình điều khiển psqlODBC_x64. Khi chạy tệp MSI, trình hướng dẫn thiết lập trình điều khiển psqlODBC_x64 sẽ bắt đầu. Trên màn hình đầu tiên, bạn có thể xem thông tin chi tiết về trình hướng dẫn. Nhấp vào `Next`.
     - ![<img width="20" height="20"/>](assets/link_4.png)
-6. Then click on I accept the terms in the license agreement
-7. On the ***Custom Setup*** screen, you can select the feature of the drivers. Click `Next`.
-8. On ***Ready to install*** screen, click on the `Install` button.
+6. Sau đó nhấp vào "I accept the terms in the license agreement"
+7. Trên màn hình ***Custom Setup***, Bạn có thể chọn tính năng của trình điều khiển. Nhấp chuột `Next`.
+8. Trên màn hình ***Ready to install***, Nhấp chuột vào `Install`.
 
 #### Configure pSQLODBC_x64 Driver using System DSN
 1. Press `Start Button` and write `ODBC`.
