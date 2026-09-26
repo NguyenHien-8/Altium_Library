@@ -1,77 +1,66 @@
-# Altium database migration tool
+# Công cụ di chuyển cơ sở dữ liệu Altium
 
-The Altium database migration tool is a Spring boot application that helps handle changes from
-[Git component repository](https://github.com/NguyenHien-8/Altium_Library) to local database for offline development
-or any other hosted Postgres database by data source.
+Công cụ di chuyển cơ sở dữ liệu Altium là một ứng dụng Spring Boot giúp xử lý các thay đổi từ
+[kho linh kiện Git](https://github.com/NguyenHien-8/Altium_Library) sang cơ sở dữ liệu cục bộ để phát triển ngoại tuyến
+hoặc sang bất kỳ cơ sở dữ liệu PostgreSQL được lưu trữ nào khác thông qua nguồn dữ liệu (data source).
 
 
 ### Cách thức hoạt động
 
 ![<img width="20" height="20"/>](assets/diagram.png)
 
-1. User run docker command, then if application image is not in local storage it will be downloaded from public docker hub
-2. The container will start with user provided DB connection or default for local development
-3. After the start, application will fetch from repository migration scripts(database sql dump)
-4. Then liquibase migration tool will check database state and update it if needed
-5. Application can be run as many times as needed, it won't overwrite data or duplicate them.
+1. Người dùng chạy lệnh Docker. Nếu image của ứng dụng chưa có trong bộ nhớ cục bộ, Docker sẽ tự động tải image này từ Docker Hub công khai.
+2. Container sẽ khởi động với thông tin kết nối cơ sở dữ liệu do người dùng cung cấp hoặc sử dụng cấu hình mặc định dành cho môi trường phát triển cục bộ.
+3. Sau khi khởi động, ứng dụng sẽ lấy các script migration (SQL dump của cơ sở dữ liệu) từ repository.
+4. Sau đó, công cụ migration Liquibase sẽ kiểm tra trạng thái hiện tại của cơ sở dữ liệu và cập nhật nếu cần.
+5. Ứng dụng có thể được chạy lại nhiều lần khi cần; dữ liệu hiện có sẽ không bị ghi đè hoặc tạo trùng lặp.
 
 
-### How to use it
+### Cách sử dụng
 
-1. First, download and install Docker here: [Download Docker Desktop for Windows](https://www.docker.com/products/docker-desktop/)
-2. After Docker has been installed, check it with: `docker ps` in command prompt
-3. Then need to signup/sign-in for Docker hub. Open Docker desktop and then `Sign in`: 
+1. Trước tiên, tải xuống và cài đặt Docker tại đây: [Tải Docker Desktop cho Windows](https://www.docker.com/products/docker-desktop/)
+2. Sau khi cài đặt Docker, mở Command Prompt và kiểm tra bằng lệnh: `docker ps`
+3. Tiếp theo, cần đăng ký/đăng nhập Docker Hub. Mở Docker Desktop rồi chọn `Sign in`:
 
 ![<img width="20" height="20"/>](assets/docker_config.png)
 
-4. Check login with command: `docker login`
+4. Kiểm tra trạng thái đăng nhập bằng lệnh: `docker login`
 
 ![<img width="20" height="20"/>](assets/docker_login.png)
 
-5. Now when Docker has configured. Need to install PostgresDB for local environment
-    - ***First option.*** Run Database in container see [here](https://hub.docker.com/_/postgres)
-      - Run in command line: `docker pull postgres`, it will pull the latest Postgres image
-      - Run Database image: 
+5. Sau khi Docker đã được cấu hình, cần cài đặt PostgreSQL cho môi trường cục bộ.
+    - ***Phương án 1.*** Chạy cơ sở dữ liệu trong container, xem hướng dẫn [tại đây](https://hub.docker.com/_/postgres)
+      - Chạy lệnh: `docker pull postgres` để tải image PostgreSQL mới nhất.
+      - Chạy image cơ sở dữ liệu:
       ```
-        docker run -d -p 5432:5432\
-        --name dev-postgres \
-        -e POSTGRES_PASSWORD=postgres \
-        -e POSTGRES_USER=postgres \
-        -e POSTGRES_DB=altium-components \
-        postgres
+        docker run -d -p 5432:5432        --name dev-postgres         -e POSTGRES_PASSWORD=postgres         -e POSTGRES_USER=postgres         -e POSTGRES_DB=altium-components         postgres
       ```
-    - ***Second option.*** Download and install Postgres for local development [here](https://www.postgresql.org/download/windows/) -> `Download the installer`
-        - Download and install PgAdmin tool from [here](https://www.pgadmin.org/)
-        - Create empty Database: 
+    - ***Phương án 2.*** Tải xuống và cài đặt PostgreSQL cho môi trường phát triển cục bộ [tại đây](https://www.postgresql.org/download/windows/) -> `Download the installer`
+        - Tải xuống và cài đặt công cụ pgAdmin từ [đây](https://www.pgadmin.org/)
+        - Tạo một cơ sở dữ liệu trống:
           - ![<img width="20" height="20"/>](assets/database.png)
-        - In `Database` field write: `altium-components` -> `Save`
-        - Check that empty database has been created: 
+        - Trong trường `Database`, nhập: `altium-components` -> `Save`
+        - Kiểm tra để đảm bảo cơ sở dữ liệu trống đã được tạo:
           - ![<img width="20" height="20"/>](assets/empty_database.png)
-          
-6. ***Optionally:*** Create DB schema, or `altium` will be created as default schema. It will be used for all migrations
-7. When all has been configured and empty Database created. Then run application
 
-***Local development***
-``` text
+6. ***Tùy chọn:*** Tạo schema cho cơ sở dữ liệu. Nếu không tạo, schema `altium` sẽ được tạo mặc định và được sử dụng cho tất cả các lần migration.
+7. Sau khi đã hoàn tất cấu hình và tạo cơ sở dữ liệu trống, chạy ứng dụng.
+
+***Phát triển cục bộ***
+```text
 docker run -p 5432:5432 -e PROFILE=docker-dev ximtech/altium-migrator
 ```
 
-***Custom Database Hosting***
+***Cơ sở dữ liệu được lưu trữ tùy chỉnh***
 
-***Note:*** For custom datasource do not change `PROFILE` variable
+***Lưu ý:*** Khi sử dụng nguồn dữ liệu tùy chỉnh, không thay đổi biến `PROFILE`.
 
 ```text
-    docker run -p 5432:5432 \
-    -e PROFILE=prod \
-    -e ALTIUM_DB_DATASOURCE='jdbc:postgresql://host.docker.internal:5432/altium-components' \
-    -e ALTIUM_DB_USERNAME='postgres' \
-    -e ALTIUM_DB_PASSWORD='postgres' \
-    -e LIQUIBASE_SCHEMA_NAME=altium \
-    ximtech/altium-migrator:latest
+    docker run -p 5432:5432     -e PROFILE=prod     -e ALTIUM_DB_DATASOURCE='jdbc:postgresql://host.docker.internal:5432/altium-components'     -e ALTIUM_DB_USERNAME='postgres'     -e ALTIUM_DB_PASSWORD='postgres'     -e LIQUIBASE_SCHEMA_NAME=altium     ximtech/altium-migrator:latest
 ```
 
-7. At the end check that all data has been transferred:
+8. Cuối cùng, kiểm tra để đảm bảo toàn bộ dữ liệu đã được chuyển thành công:
 - ![<img width="20" height="20"/>](assets/migration_finished.png)
-   
-***Database Structure***
+
+***Cấu trúc cơ sở dữ liệu***
 - ![<img width="20" height="20"/>](assets/success.png)
