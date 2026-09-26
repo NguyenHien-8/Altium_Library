@@ -69,5 +69,5 @@ docker compose run --rm migrator
 
 ***Cấu trúc cơ sở dữ liệu***
 <p align="center">
-  <img src="assets/success.png" width="250" />
+  <img src="assets/success.png" width="300" />
 </p>
