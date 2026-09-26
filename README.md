@@ -31,7 +31,10 @@ Luồng kết nối có thể hình dung ngắn gọn:
 ### Cách sử dụng
 
 #### Clone repository
-1. `https://github.com/NguyenHien-8/Altium_Library.git`
+
+```
+https://github.com/NguyenHien-8/Altium_Library.git
+```
 
 ### Cấu hình trình điều khiển ODBC cho PostgreSQL
 
@@ -93,23 +96,24 @@ Luồng kết nối có thể hình dung ngắn gọn:
     <p align="center">
       <img src="assets/link_10.png" alt="System DSN PostgreSQL" width="650" />
     </p>
-#### Populate Database using migration tool
-1. Go to [altium-migrator](https://github.com/ximtech/altium-migrator#how-to-use-it) and follow instructions.
-2. At this point, tip `5` can be skipped in `altium-migrator` manual, because database already has been installed.
-3. If all ok, move to the next step
 
-#### Add library to Altium
-1. Open `Altium designer` -> `Components` -> `File-based Libraries Preferences` -> `Install`
-2. Go to `altium-library` folder then choose:
+#### Nạp dữ liệu vào cơ sở dữ liệu bằng công cụ migration
+1. Đi đến [altium-migrator](https://github.com/ximtech/altium-migrator#how-to-use-it) và làm theo hướng dẫn.
+2. Nếu mọi thứ đều ổn, hãy chuyển sang bước tiếp theo.
+
+#### Thêm thư viện vào Altium
+1. Mở `Altium designer` -> `Components` -> `File-based Libraries Preferences` -> `Install`
+2. Đi đến thư mục `altium-library` rồi chọn:
     <p align="center">
       <img src="assets/link_10.png" alt="System DSN PostgreSQL" width="650" />
     </p>
-3. Additionally, verify connection settings by pressing `Advanced...` button
+3. Ngoài ra, hãy kiểm tra các cài đặt kết nối bằng cách nhấn nút `Advanced...`
     <p align="center">
       <img src="assets/altium_db_settings.png" alt="Cấu hình kết nối Database Library trong Altium" width="650" />
     </p>
-## For already existing database
-1. Skip first tip at `Offline development configuration` manual
-2. In `Configure pSQLODBC_x64 Driver using System DSN` set your DB datasource values(host, port, username and password)
-3. Populate DB using [altium-migrator](https://github.com/ximtech/altium-migrator) tool
-3. Then in `altium-library` folder open `Postgres Altium Library - altium_library.DbLib` with notepad and change `ConnectionString`(4th line) with custom DB parameters
+
+## Đối với cơ sở dữ liệu đã tồn tại
+1. Bỏ qua mẹo đầu tiên trong `Offline development configuration` hướng dẫn sử dụng.
+2. Trong `Configure pSQLODBC_x64 Driver using System DSN` phần thiết lập các giá trị nguồn dữ liệu cơ sở dữ liệu của bạn (host, port, username and password)
+3. Điền dữ liệu vào cơ sở dữ liệu bằng công cụ [altium-migrator](https://github.com/ximtech/altium-migrator)
+4. Sau đó, `altium-library` mở thư mục `Postgres Altium Library - altium_library.DbLib` bằng Notepad và thay đổi `ConnectionString`dòng thứ 4 thành các tham số DB tùy chỉnh.
