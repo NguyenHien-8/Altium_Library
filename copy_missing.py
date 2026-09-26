@@ -8,8 +8,10 @@ Examples ( Sao chép tệp tuyển tập thư viện cho Altium Library):
     python copy_missing.py "E:\ALL_PROJECTS\GIT_REPOSITORY\HARDWARE_LIBRARY\Sample\altium-library-master\footprints" "E:\ALL_PROJECTS\GIT_REPOSITORY\HARDWARE_LIBRARY\Altium_Library\footprints"
 
     python copy_missing.py "E:\ALL_PROJECTS\GIT_REPOSITORY\HARDWARE_LIBRARY\Sample\altium-library-master\symbols"    "E:\ALL_PROJECTS\GIT_REPOSITORY\HARDWARE_LIBRARY\Altium_Library\symbols"
-    
+
     python copy_missing.py "E:\ALL_PROJECTS\GIT_REPOSITORY\HARDWARE_LIBRARY\Sample\altium-library-master\STEP"       "E:\ALL_PROJECTS\GIT_REPOSITORY\HARDWARE_LIBRARY\Altium_Library\STEP"
+
+    python copy_missing.py "E:\ALL_PROJECTS\GIT_REPOSITORY\HARDWARE_LIBRARY\Sample\altium-library-master\images"       "E:\ALL_PROJECTS\GIT_REPOSITORY\HARDWARE_LIBRARY\Altium_Library\images"
 
 Preview only (kiểm tra những gì sẽ được sao chép mà không thay đổi bất cứ thứ gì):
     python copy_missing.py "E:\ALL_PROJECTS\GIT_REPOSITORY\HARDWARE_LIBRARY\Sample\altium-library-master\STEP" "E:\ALL_PROJECTS\GIT_REPOSITORY\HARDWARE_LIBRARY\Altium_Library\STEP" --dry-run

@@ -1,7 +1,5 @@
 # Altium Library
 
-[![build](https://github.com/ximtech/altium-library/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/ximtech/altium-library/actions/workflows/build.yml)
-
 This library is a copy of excellent [Celestial Altium Library](https://github.com/issus/altium-library).
 The primary objective in undertaking this project is independent development.
 
