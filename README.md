@@ -1,7 +1,7 @@
-# Công cụ di chuyển cơ sở dữ liệu Altium
+# Altium database migration tool
 
 Công cụ di chuyển cơ sở dữ liệu Altium là một ứng dụng Spring Boot giúp xử lý các thay đổi từ
-[kho linh kiện Git](https://github.com/NguyenHien-8/Altium_Library) sang cơ sở dữ liệu cục bộ để phát triển ngoại tuyến
+[Git component repository](https://github.com/NguyenHien-8/Altium_Library) sang cơ sở dữ liệu cục bộ để phát triển ngoại tuyến
 hoặc sang bất kỳ cơ sở dữ liệu PostgreSQL được lưu trữ nào khác thông qua nguồn dữ liệu (data source).
 
 
@@ -20,7 +20,7 @@ hoặc sang bất kỳ cơ sở dữ liệu PostgreSQL được lưu trữ nào 
 
 ### Cách sử dụng
 
-1. Trước tiên, tải xuống và cài đặt Docker tại đây: [Tải Docker Desktop cho Windows](https://www.docker.com/products/docker-desktop/)
+1. Trước tiên, tải xuống và cài đặt Docker tại đây: [Download Docker Desktop for Windows](https://www.docker.com/products/docker-desktop/)
 2. Sau khi cài đặt Docker, mở Command Prompt và kiểm tra bằng lệnh: `docker version` và `docker ps`
 3. Tiếp theo, cần đăng ký/đăng nhập Docker Hub. Mở Docker Desktop rồi chọn `Sign in`:
 4. Kiểm tra trạng thái đăng nhập bằng lệnh: `docker login`
