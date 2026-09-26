@@ -63,7 +63,11 @@ docker run -p 5432:5432 -e PROFILE=docker-dev ximtech/altium-migrator
 ```
 
 8. Cuối cùng, kiểm tra để đảm bảo toàn bộ dữ liệu đã được chuyển thành công:
-- ![<img width="20" height="20"/>](assets/migration_finished.png)
+<p align="center">
+  <img src="assets/migration_finished.png" width="220" />
+</p>
 
 ***Cấu trúc cơ sở dữ liệu***
-- ![<img width="20" height="20"/>](assets/success.png)
+<p align="center">
+  <img src="assets/success.png" width="220" />
+</p>
