@@ -1,7 +1,7 @@
 [OutputDatabaseLinkFile]
 Version=1.1
 [DatabaseLinks]
-ConnectionString=Provider=MSDASQL.1;Password=postgres;Persist Security Info=True;User ID=postgres;Data Source=localPostgres;Mode=ReadWrite;Initial Catalog=altium-components
+ConnectionString=Provider=MSDASQL.1;Password=NguyenHien@789;Persist Security Info=True;User ID=postgres;Data Source=AltiumPostgreSQL;Mode=ReadWrite;Initial Catalog=Altium-Components
 AddMode=3
 RemoveMode=1
 UpdateMode=2
@@ -18,7 +18,7 @@ TopPanelCollapsed=0
 LibrarySearchPath=
 OrcadMultiValueDelimiter=,
 SearchSubDirectories=0
-SchemaName=ALTIUM
+SchemaName=altium
 LastFocusedTable=altium.Amplifiers-OP-AmpsAndBufferAmps
 [Table1]
 SchemaName=
