@@ -17,8 +17,9 @@
 1. Tải xuống và cài đặt Postgres để phát triển cục bộ [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) -> `Download the installer`.
   - Tải xuống và cài đặt công cụ PgAdmin từ [here](https://www.pgadmin.org/).
   - Tạo cơ sở dữ liệu trống:
-  - ![<img width="20" height="20"/>](assets/database.png)
-  - Trong `Database` ô này, hãy viết: `altium-components` -> `Save`
+    - ![<img width="20" height="20"/>](assets/database.png)
+  - Trong `Database` ô này, hãy viết: `Altium-Components` -> `Save`
+    - ![<img width="20" height="20"/>](assets/database1.png)
    
 2. Tải xuống trình điều khiển pSQLODBC_x64 từ [this](https://www.postgresql.org/ftp/odbc/versions.old/) vị trí.
   Chúng ta đang cấu hình trình điều khiển ODBC cho Windows 11 trở lên, vì vậy chúng ta sẽ tải xuống tệp MSI của trình điều khiển. Nhấp vào thư mục MSI.
@@ -28,7 +29,7 @@
    - ![<img width="20" height="20"/>](assets/link_2.png)
 4. Sau khi quá trình tải xuống hoàn tất, nhấp chuột phải vào tệp `psqlodbc_13_02_0000-x86-1.zip` và chọn Extract to `psqlodbc_13_02_0000-x86-1.zip`.
     - ![<img width="20" height="20"/>](assets/link_3.png)
-5. Cài đặt trình điều khiển psqlODBC_x64. Khi chạy tệp MSI, trình hướng dẫn thiết lập trình điều khiển psqlODBC_x64 sẽ bắt đầu. Trên màn hình đầu tiên, bạn có thể xem thông tin chi tiết về trình hướng dẫn. Nhấp vào `Next`.
+5. Cài đặt trình điều khiển psqlODBC_x64. Nhấp vào `Next`.
     - ![<img width="20" height="20"/>](assets/link_4.png)
 6. Sau đó nhấp vào "I accept the terms in the license agreement"
 7. Trên màn hình ***Custom Setup***, Bạn có thể chọn tính năng của trình điều khiển. Nhấp chuột `Next`.
