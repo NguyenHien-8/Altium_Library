@@ -105,7 +105,7 @@ https://github.com/NguyenHien-8/Altium_Library.git
 1. Mở `Altium designer` -> `Components` -> `File-based Libraries Preferences` -> `Install`
 2. Đi đến thư mục `altium-library` rồi chọn:
     <p align="center">
-      <img src="assets/link_10.png" alt="System DSN PostgreSQL" width="650" />
+      <img src="assets/link_11.png" alt="System DSN PostgreSQL" width="650" />
     </p>
 3. Ngoài ra, hãy kiểm tra các cài đặt kết nối bằng cách nhấn nút `Advanced...`
     <p align="center">
