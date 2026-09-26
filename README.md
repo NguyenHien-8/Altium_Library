@@ -98,7 +98,7 @@ https://github.com/NguyenHien-8/Altium_Library.git
     </p>
 
 #### Nạp dữ liệu vào cơ sở dữ liệu bằng công cụ migration
-1. Đi đến [altium-migrator](https://github.com/ximtech/altium-migrator#how-to-use-it) và làm theo hướng dẫn.
+1. Đi đến [altium-migrator](https://github.com/NguyenHien-8/Altium_Library/tree/migrator#Cách thức hoạt động) và làm theo hướng dẫn.
 2. Nếu mọi thứ đều ổn, hãy chuyển sang bước tiếp theo.
 
 #### Thêm thư viện vào Altium
@@ -115,5 +115,5 @@ https://github.com/NguyenHien-8/Altium_Library.git
 ## Đối với cơ sở dữ liệu đã tồn tại
 1. Bỏ qua mẹo đầu tiên trong `Offline development configuration` hướng dẫn sử dụng.
 2. Trong `Configure pSQLODBC_x64 Driver using System DSN` phần thiết lập các giá trị nguồn dữ liệu cơ sở dữ liệu của bạn (host, port, username and password)
-3. Điền dữ liệu vào cơ sở dữ liệu bằng công cụ [altium-migrator](https://github.com/ximtech/altium-migrator)
+3. Điền dữ liệu vào cơ sở dữ liệu bằng công cụ [altium-migrator](https://github.com/NguyenHien-8/Altium_Library/tree/migrator)
 4. Sau đó, `altium-library` mở thư mục `Postgres Altium Library - altium_library.DbLib` bằng Notepad và thay đổi `ConnectionString`dòng thứ 4 thành các tham số DB tùy chỉnh.
