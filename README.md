@@ -51,7 +51,7 @@ hoặc sang bất kỳ cơ sở dữ liệu PostgreSQL được lưu trữ nào 
 
 ***Phát triển cục bộ***
 ```text
-docker run -p 5432:5432 -e PROFILE=docker-dev ximtech/altium-migrator
+docker compose run --rm migrator
 ```
 
 ***Cơ sở dữ liệu được lưu trữ tùy chỉnh***
@@ -59,7 +59,7 @@ docker run -p 5432:5432 -e PROFILE=docker-dev ximtech/altium-migrator
 ***Lưu ý:*** Khi sử dụng nguồn dữ liệu tùy chỉnh, không thay đổi biến `PROFILE`.
 
 ```text
-    docker run -p 5432:5432     -e PROFILE=prod     -e ALTIUM_DB_DATASOURCE='jdbc:postgresql://host.docker.internal:5432/altium-components'     -e ALTIUM_DB_USERNAME='postgres'     -e ALTIUM_DB_PASSWORD='postgres'     -e LIQUIBASE_SCHEMA_NAME=altium     ximtech/altium-migrator:latest
+    docker run -p 5432:5432     -e PROFILE=prod     -e ALTIUM_DB_DATASOURCE='jdbc:postgresql://host.docker.internal:5432/Altium-Components'     -e ALTIUM_DB_USERNAME='postgres'     -e ALTIUM_DB_PASSWORD='postgres'     -e LIQUIBASE_SCHEMA_NAME=altium     mrnhien/altium-migrator:latest
 ```
 
 8. Cuối cùng, kiểm tra để đảm bảo toàn bộ dữ liệu đã được chuyển thành công:
