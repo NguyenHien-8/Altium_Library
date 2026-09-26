@@ -7,7 +7,9 @@ hoặc sang bất kỳ cơ sở dữ liệu PostgreSQL được lưu trữ nào 
 
 ### Cách thức hoạt động
 
-![<img width="20" height="20"/>](assets/diagram.png)
+<p align="center">
+  <img src="assets/diagram.png" alt="Sơ đồ hoạt động của migrator" width="650" />
+</p>
 
 1. Người dùng chạy lệnh Docker. Nếu image của ứng dụng chưa có trong bộ nhớ cục bộ, Docker sẽ tự động tải image này từ Docker Hub công khai.
 2. Container sẽ khởi động với thông tin kết nối cơ sở dữ liệu do người dùng cung cấp hoặc sử dụng cấu hình mặc định dành cho môi trường phát triển cục bộ.
@@ -21,27 +23,28 @@ hoặc sang bất kỳ cơ sở dữ liệu PostgreSQL được lưu trữ nào 
 1. Trước tiên, tải xuống và cài đặt Docker tại đây: [Tải Docker Desktop cho Windows](https://www.docker.com/products/docker-desktop/)
 2. Sau khi cài đặt Docker, mở Command Prompt và kiểm tra bằng lệnh: `docker ps`
 3. Tiếp theo, cần đăng ký/đăng nhập Docker Hub. Mở Docker Desktop rồi chọn `Sign in`:
-
-![<img width="20" height="20"/>](assets/docker_config.png)
-
 4. Kiểm tra trạng thái đăng nhập bằng lệnh: `docker login`
 
 ![<img width="20" height="20"/>](assets/docker_login.png)
 
 5. Sau khi Docker đã được cấu hình, cần cài đặt PostgreSQL cho môi trường cục bộ.
-    - ***Phương án 1.*** Chạy cơ sở dữ liệu trong container, xem hướng dẫn [tại đây](https://hub.docker.com/_/postgres)
+    - ***Phương án 1.*** Chạy cơ sở dữ liệu trong container, xem hướng dẫn [this](https://hub.docker.com/_/postgres)
       - Chạy lệnh: `docker pull postgres` để tải image PostgreSQL mới nhất.
       - Chạy image cơ sở dữ liệu:
       ```
         docker run -d -p 5432:5432        --name dev-postgres         -e POSTGRES_PASSWORD=postgres         -e POSTGRES_USER=postgres         -e POSTGRES_DB=altium-components         postgres
       ```
-    - ***Phương án 2.*** Tải xuống và cài đặt PostgreSQL cho môi trường phát triển cục bộ [tại đây](https://www.postgresql.org/download/windows/) -> `Download the installer`
-        - Tải xuống và cài đặt công cụ pgAdmin từ [đây](https://www.pgadmin.org/)
+    - ***Phương án 2.*** Tải xuống và cài đặt Postgres để phát triển cục bộ [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads) -> `Download the installer`.
+        - Tải xuống và cài đặt công cụ PgAdmin từ [here](https://www.pgadmin.org/).
         - Tạo một cơ sở dữ liệu trống:
-          - ![<img width="20" height="20"/>](assets/database.png)
-        - Trong trường `Database`, nhập: `altium-components` -> `Save`
+          <p align="center">
+            <img src="assets/database.png" alt="Tạo cơ sở dữ liệu PostgreSQL" width="650" />
+          </p>
+        - Trong `Database` ô này, hãy viết: `Altium-Components` -> `Save`
         - Kiểm tra để đảm bảo cơ sở dữ liệu trống đã được tạo:
-          - ![<img width="20" height="20"/>](assets/empty_database.png)
+          <p align="center">
+            <img src="assets/empty_database.png" alt="Đảm bảo cơ sở dữ liệu trống" width="650" />
+          </p>
 
 6. ***Tùy chọn:*** Tạo schema cho cơ sở dữ liệu. Nếu không tạo, schema `altium` sẽ được tạo mặc định và được sử dụng cho tất cả các lần migration.
 7. Sau khi đã hoàn tất cấu hình và tạo cơ sở dữ liệu trống, chạy ứng dụng.
