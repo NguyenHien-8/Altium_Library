@@ -43,7 +43,7 @@ hoặc sang bất kỳ cơ sở dữ liệu PostgreSQL được lưu trữ nào 
         - Trong `Database` ô này, hãy viết: `Altium-Components` -> `Save`
         - Kiểm tra để đảm bảo cơ sở dữ liệu trống đã được tạo:
           <p align="center">
-            <img src="assets/empty_database.png" alt="Đảm bảo cơ sở dữ liệu trống" width="220" />
+            <img src="assets/empty_database.png" alt="Đảm bảo cơ sở dữ liệu trống" width="250" />
           </p>
 
 6. ***Tùy chọn:*** Tạo schema cho cơ sở dữ liệu. Nếu không tạo, schema `altium` sẽ được tạo mặc định và được sử dụng cho tất cả các lần migration.
@@ -64,10 +64,10 @@ docker run -p 5432:5432 -e PROFILE=docker-dev ximtech/altium-migrator
 
 8. Cuối cùng, kiểm tra để đảm bảo toàn bộ dữ liệu đã được chuyển thành công:
 <p align="center">
-  <img src="assets/migration_finished.png" width="220" />
+  <img src="assets/migration_finished.png" width="650" />
 </p>
 
 ***Cấu trúc cơ sở dữ liệu***
 <p align="center">
-  <img src="assets/success.png" width="220" />
+  <img src="assets/success.png" width="250" />
 </p>
