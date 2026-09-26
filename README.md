@@ -98,7 +98,7 @@ https://github.com/NguyenHien-8/Altium_Library.git
     </p>
 
 #### Nạp dữ liệu vào cơ sở dữ liệu bằng công cụ migration
-1. Đi đến [altium-migrator](https://github.com/NguyenHien-8/Altium_Library/tree/migrator#Cách thức hoạt động) và làm theo hướng dẫn.
+1. Đi đến [altium-migrator](https://github.com/NguyenHien-8/Altium_Library/tree/migrator#Cách-thức-hoạt-động) và làm theo hướng dẫn.
 2. Nếu mọi thứ đều ổn, hãy chuyển sang bước tiếp theo.
 
 #### Thêm thư viện vào Altium
