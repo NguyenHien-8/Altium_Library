@@ -117,3 +117,23 @@ https://github.com/NguyenHien-8/Altium_Library.git
 2. Trong `Configure pSQLODBC_x64 Driver using System DSN` phần thiết lập các giá trị nguồn dữ liệu cơ sở dữ liệu của bạn (host, port, username and password)
 3. Điền dữ liệu vào cơ sở dữ liệu bằng công cụ [altium-migrator](https://github.com/NguyenHien-8/Altium_Library/tree/migrator)
 4. Sau đó, `altium-library` mở thư mục `Postgres Altium Library - altium_library.DbLib` bằng Notepad và thay đổi `ConnectionString`dòng thứ 4 thành các tham số DB tùy chỉnh.
+
+## Kiến trúc dự án
+
+```
+NguyenHien-8/Altium_Library
+│
+├── branch migrator
+│   └── Java/Spring Boot migrator
+│          ↓ GitHub Actions
+│   mrnhien/altium-migrator:latest
+│
+└── branch master
+    └── migrations/
+          ↓
+       Liquibase
+          ↓
+PostgreSQL: Altium-Components
+          ↓
+      schema altium
+```
