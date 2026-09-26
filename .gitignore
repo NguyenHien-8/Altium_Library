@@ -31,6 +31,7 @@ out/
 /dist/
 /nbdist/
 /.nb-gradle/
+Docker token.txt
 
 ### VS Code ###
 .vscode/
