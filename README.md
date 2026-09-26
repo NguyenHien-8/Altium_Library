@@ -7,7 +7,7 @@ The Altium database migration tool is a Spring boot application that helps handl
 or any other hosted Postgres database by data source.
 
 
-### How it works
+### Cách thức hoạt động
 
 ![<img width="20" height="20"/>](assets/diagram.png)
 
