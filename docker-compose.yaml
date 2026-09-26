@@ -1,8 +1,15 @@
-version: '2.4'
-
 services:
-  server:
-    image: altium-migrator:latest
-    ports:
-    - 5432:5432
-    command: --spring.profiles.active=docker-dev
+  migrator:
+    image: ${DOCKER_IMAGE:-mrnhien/altium-migrator:latest}
+    container_name: altium-migrator
+    environment:
+      PROFILE: prod
+      ALTIUM_DB_DATASOURCE: jdbc:postgresql://host.docker.internal:5432/${POSTGRES_DB:-Altium-Components}
+      ALTIUM_DB_USERNAME: ${POSTGRES_USER:-postgres}
+      ALTIUM_DB_PASSWORD: ${POSTGRES_PASSWORD}
+      LIQUIBASE_SCHEMA_NAME: ${LIQUIBASE_SCHEMA_NAME:-altium}
+      MIGRATION_GIT_REPOSITORY_URL: ${MIGRATION_GIT_REPOSITORY_URL:-https://github.com/NguyenHien-8/Altium_Library.git}
+      MIGRATION_GIT_BRANCH: ${MIGRATION_GIT_BRANCH:-master}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: "no"

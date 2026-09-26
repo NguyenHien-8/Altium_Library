@@ -16,6 +16,9 @@ public class GitRepositoryService {
     @Value("${git.repository.url}")
     private String gitRepositoryUrl;
 
+    @Value("${git.repository.branch:master}")
+    private String gitRepositoryBranch;
+
     @Value("${git.repository.directory.name}")
     private String gitDirectoryName;
 
@@ -25,25 +28,41 @@ public class GitRepositoryService {
     @SneakyThrows
     public void cloneRepositoryWithChangelog() {
         File destinationDirectory = new File(destinationPath);
+
         if (!FileUtils.isEmptyDirectory(destinationDirectory)) {
-            log.info("Destination directory {} not empty. Skipping repository clone", destinationPath);
+            log.info("Destination directory {} is not empty. Skipping repository clone.", destinationPath);
             return;
         }
-        
-        log.info("Accessing git repository: {}", gitRepositoryUrl);
-        Git.cloneRepository()
+
+        String remoteBranch = "origin/" + gitRepositoryBranch;
+        String branchRef = "refs/heads/" + gitRepositoryBranch;
+
+        log.info(
+                "Accessing git repository: {} (branch: {}, path: {})",
+                gitRepositoryUrl,
+                gitRepositoryBranch,
+                gitDirectoryName
+        );
+
+        try (Git git = Git.cloneRepository()
                 .setURI(gitRepositoryUrl)
                 .setDirectory(destinationDirectory)
-                .setBranch("refs/heads/main")
+                .setBranch(branchRef)
                 .setCloneAllBranches(false)
                 .setCloneSubmodules(true)
                 .setNoCheckout(true)
-                .call()
-                .checkout()
-                .setStartPoint("origin/main")
-                .addPath(gitDirectoryName)
-                .call();
+                .call()) {
 
-        log.info("Git repository successfully cloned to path: {}", destinationDirectory.getPath());
+            git.checkout()
+                    .setStartPoint(remoteBranch)
+                    .addPath(gitDirectoryName)
+                    .call();
+        }
+
+        log.info(
+                "Git repository successfully cloned to path: {} from branch: {}",
+                destinationDirectory.getPath(),
+                gitRepositoryBranch
+        );
     }
 }

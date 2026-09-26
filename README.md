@@ -21,7 +21,7 @@ hoặc sang bất kỳ cơ sở dữ liệu PostgreSQL được lưu trữ nào 
 ### Cách sử dụng
 
 1. Trước tiên, tải xuống và cài đặt Docker tại đây: [Tải Docker Desktop cho Windows](https://www.docker.com/products/docker-desktop/)
-2. Sau khi cài đặt Docker, mở Command Prompt và kiểm tra bằng lệnh: `docker ps`
+2. Sau khi cài đặt Docker, mở Command Prompt và kiểm tra bằng lệnh: `docker version` và `docker ps`
 3. Tiếp theo, cần đăng ký/đăng nhập Docker Hub. Mở Docker Desktop rồi chọn `Sign in`:
 4. Kiểm tra trạng thái đăng nhập bằng lệnh: `docker login`
 
@@ -43,7 +43,7 @@ hoặc sang bất kỳ cơ sở dữ liệu PostgreSQL được lưu trữ nào 
         - Trong `Database` ô này, hãy viết: `Altium-Components` -> `Save`
         - Kiểm tra để đảm bảo cơ sở dữ liệu trống đã được tạo:
           <p align="center">
-            <img src="assets/empty_database.png" alt="Đảm bảo cơ sở dữ liệu trống" width="200" />
+            <img src="assets/empty_database.png" alt="Đảm bảo cơ sở dữ liệu trống" width="220" />
           </p>
 
 6. ***Tùy chọn:*** Tạo schema cho cơ sở dữ liệu. Nếu không tạo, schema `altium` sẽ được tạo mặc định và được sử dụng cho tất cả các lần migration.
