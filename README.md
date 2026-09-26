@@ -19,34 +19,35 @@
   - Tạo cơ sở dữ liệu trống:
     - ![<img width="20" height="20"/>](assets/database.png)
   - Trong `Database` ô này, hãy viết: `Altium-Components` -> `Save`
-    - ![<img width="15" height="15"/>](assets/database1.png)
+    - ![<img width="10" height="10"/>](assets/database1.png)
    
 2. Tải xuống trình điều khiển pSQLODBC_x64 từ [this](https://www.postgresql.org/ftp/odbc/versions.old/) vị trí.
   Chúng ta đang cấu hình trình điều khiển ODBC cho Windows 11 trở lên, vì vậy chúng ta sẽ tải xuống tệp MSI của trình điều khiển. Nhấp vào thư mục MSI.
-    - ![<img width="18" height="18"/>](assets/link_1.png)
+    - ![<img width="15" height="15"/>](assets/link_1.png)
 3. Trong thư mục MSI, bạn có thể xem các phiên bản trình điều khiển khác nhau. Các tệp được nén ở định dạng zip.
       Chúng ta muốn tải xuống phiên bản mới nhất, vì vậy hãy cuộn xuống cuối trang và nhấp vào tệp `psqlodbc_13_02_0000-x86-1.zip`.
-   - ![<img width="18" height="18"/>](assets/link_2.png)
+   - ![<img width="15" height="15"/>](assets/link_2.png)
 4. Sau khi quá trình tải xuống hoàn tất, nhấp chuột phải vào tệp `psqlodbc_13_02_0000-x86-1.zip` và chọn Extract to `psqlodbc_13_02_0000-x86-1.zip`.
-    - ![<img width="18" height="18"/>](assets/link_3.png)
+    - ![<img width="15" height="15"/>](assets/link_3.png)
 5. Cài đặt trình điều khiển psqlODBC_x64. Nhấp vào `Next`.
-    - ![<img width="18" height="18"/>](assets/link_4.png)
+    - ![<img width="15" height="15"/>](assets/link_4.png)
 6. Sau đó nhấp vào "I accept the terms in the license agreement"
 7. Trên màn hình ***Custom Setup***, Bạn có thể chọn tính năng của trình điều khiển. Nhấp chuột `Next`.
 8. Trên màn hình ***Ready to install***, Nhấp chuột vào `Install`.
 
-#### Configure pSQLODBC_x64 Driver using System DSN
-1. Press `Start Button` and write `ODBC`.
-    - ![<img width="20" height="20"/>](assets/link_5.png)
-2. Open ODBC Data Source (64–bit) -> Click on System DSN tab -> Click on Add.
-    - ![<img width="20" height="20"/>](assets/link_6.png)
-3. A dialog box Create a new data source opens. Select PostgreSQL Unicode(x64) driver and click on Finish.
-    - ![<img width="20" height="20"/>](assets/link_7.png)
-4. Configure parameters as follows and press `Test` button.
-    - ![<img width="20" height="20"/>](assets/link_8.png)
-5. Verify the connectivity.
-    - ![<img width="20" height="20"/>](assets/link_9.png)
-6. Click on Save to create the system DSN. Back to the System DSN screen, you can see the `localPostgres` DSN has been created.
+#### Cấu hình trình điều khiển pSQLODBC_x64 sử dụng System DSN
+1. Nhấn `Window` và viết `ODBC`.
+    - ![<img width="15" height="15"/>](assets/link_5.png)
+2. Mở ODBC Data Source (64-bit) -> Nhấp vào thẻ System DSN -> Nhấp vào Add.
+    - ![<img width="15" height="15"/>](assets/link_6.png)
+3. Hộp thoại "Create a new data source" sẽ mở ra. Hãy chọn trình điều khiển PostgreSQL ODBC Driver(UNICODE) và nhấp vào nút Finish.
+    - ![<img width="15" height="15"/>](assets/link_7.png)
+4. Cấu hình các thông số như sau và nhấn `Test`.
+    - ![<img width="15" height="15"/>](assets/link_8.png)
+5. Kiểm tra kết nối.
+    - ![<img width="15" height="15"/>](assets/link_9.png)
+6. Nhấp vào Lưu để tạo DSN hệ thống. Quay lại màn hình DSN hệ thống, bạn có thể thấy `localPostgres` DSN đã được tạo.
+    - ![<img width="15" height="15"/>](assets/link_10.png)
 
 #### Populate Database using migration tool
 1. Go to [altium-migrator](https://github.com/ximtech/altium-migrator#how-to-use-it) and follow instructions.
