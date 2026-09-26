@@ -19,18 +19,18 @@
   - Tạo cơ sở dữ liệu trống:
     - ![<img width="20" height="20"/>](assets/database.png)
   - Trong `Database` ô này, hãy viết: `Altium-Components` -> `Save`
-    - ![<img width="20" height="20"/>](assets/database1.png)
+    - ![<img width="15" height="15"/>](assets/database1.png)
    
 2. Tải xuống trình điều khiển pSQLODBC_x64 từ [this](https://www.postgresql.org/ftp/odbc/versions.old/) vị trí.
   Chúng ta đang cấu hình trình điều khiển ODBC cho Windows 11 trở lên, vì vậy chúng ta sẽ tải xuống tệp MSI của trình điều khiển. Nhấp vào thư mục MSI.
-    - ![<img width="20" height="20"/>](assets/link_1.png)
+    - ![<img width="18" height="18"/>](assets/link_1.png)
 3. Trong thư mục MSI, bạn có thể xem các phiên bản trình điều khiển khác nhau. Các tệp được nén ở định dạng zip.
       Chúng ta muốn tải xuống phiên bản mới nhất, vì vậy hãy cuộn xuống cuối trang và nhấp vào tệp `psqlodbc_13_02_0000-x86-1.zip`.
-   - ![<img width="20" height="20"/>](assets/link_2.png)
+   - ![<img width="18" height="18"/>](assets/link_2.png)
 4. Sau khi quá trình tải xuống hoàn tất, nhấp chuột phải vào tệp `psqlodbc_13_02_0000-x86-1.zip` và chọn Extract to `psqlodbc_13_02_0000-x86-1.zip`.
-    - ![<img width="20" height="20"/>](assets/link_3.png)
+    - ![<img width="18" height="18"/>](assets/link_3.png)
 5. Cài đặt trình điều khiển psqlODBC_x64. Nhấp vào `Next`.
-    - ![<img width="20" height="20"/>](assets/link_4.png)
+    - ![<img width="18" height="18"/>](assets/link_4.png)
 6. Sau đó nhấp vào "I accept the terms in the license agreement"
 7. Trên màn hình ***Custom Setup***, Bạn có thể chọn tính năng của trình điều khiển. Nhấp chuột `Next`.
 8. Trên màn hình ***Ready to install***, Nhấp chuột vào `Install`.
