@@ -1,7 +1,9 @@
 # Fix_Push
 
 ### Khi push các file nhị phân lớn của Altium như .IntLib, .PcbLib hay .Step mà gặp lại Internal Server Error
-- Thao tác như sau:
+
+#### Thao tác như sau:
+
 1. Hủy commit tạm thời:
 ``` powershell
 git reset --soft HEAD~1
